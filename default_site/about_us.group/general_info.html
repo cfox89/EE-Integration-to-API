@@ -1,0 +1,17 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    <div id="left_side">
+        {snp_latest_news}
+        <div class="large-8 columns">
+            <div class="title">
+                {exp:channel:entries channel="about_us" entry_id="129"}
+                <h2>{title}</h2>
+                {about_us_content}
+            </div>
+            {/exp:channel:entries}
+        </div>
+    </div>
+</div>
+</div>
+{snp_footer}

@@ -1,0 +1,45 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    <div id="left_side">
+        {snp_events}
+        <div class="large-8 columns">
+            <div class="title">
+                <h2>Register for Event</h2>
+                <br>
+                {exp:freeform:form
+                form_name="Register" required="First_Name|Last_Name|Date_of_Birth|Address|Email|"
+                notify="{email}" 
+                return="/line_up"}
+                <p>
+                    <label>{freeform:label:first_name}</label>
+                    {freeform:field:first_name}
+                </p>
+                <p>
+                    <label>{freeform:label:last_name}</label>
+                    {freeform:field:last_name}
+                </p>
+                <p>
+                    <label>{freeform:label:date_of_birth}</label>
+                    {freeform:field:date_of_birth}
+                </p>
+                <p>
+                    <label>{freeform:label:address}</label>
+                    {freeform:field:address}
+                </p>
+                <p>
+                    <label>{freeform:label:email}</label>
+                    {freeform:field:email}
+                </p>
+                <p>
+                    <label>{freeform:label:tel_no}</label>
+                    {freeform:field:tel_no}
+                </p>
+                <input type="submit" value="Register"/>
+                {/exp:freeform:form} 
+                <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
+            </div>
+        </div>
+    </div> 
+</div>
+{snp_footer}     

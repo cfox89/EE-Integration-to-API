@@ -1,0 +1,72 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    <div id="left_side">
+        {snp_calendar}
+    
+        <!-- Thumbnails -->
+         <div class="large-8 columns">
+           <div class="row">
+            {exp:channel:entries channel="line_up"}
+            <ul>
+            <li>
+               {if band_image}<img src="{band_image}" width="192" height="167" class="left" />{/if}
+                <h5>{title}</h5>
+                 {band_content}
+             
+                </a>
+            </li>
+            {/exp:channel:entries}
+
+                <!-- <div class="large-4 small-6 columns">
+                    {exp:channel:entries channel="line_up" entry_id="116"}
+                    {if band_image}<img src="{band_image}" class="left"/>{/if}
+                    <div class="panel">
+                        <h5>{title}</h5>
+                        {band_content}
+                        {/exp:channel:entries}
+                    </div>
+                </div>
+                <div class="large-4 small-6 columns">
+                    {exp:channel:entries channel="line_up" entry_id="117"}
+                    {if band_image}<img src="{band_image}" class="left"/>{/if}
+                    <div class="panel">
+                        <h5>{title}</h5>
+                        {band_content}
+                        {/exp:channel:entries}
+                    </div>
+                </div>
+                <hr>
+                <div class="large-4 small-6 columns">
+                    {exp:channel:entries channel="line_up" entry_id="118"}
+                    {if band_image}<img src="{band_image}" class="left"/>{/if}
+                    <div class="panel">
+                        <h5>{title}</h5>
+                        {band_content}
+                        {/exp:channel:entries}
+                    </div>
+                </div>
+                <div class="large-4 small-6 columns">
+                    {exp:channel:entries channel="line_up" entry_id="119"}
+                    {if band_image}<img src="{band_image}" class="left"/>{/if}
+                    <div class="panel">
+                        <h5>{title}</h5>
+                        {band_content}
+                        {/exp:channel:entries}
+                    </div>
+                </div>
+                <div class="large-4 small-6 columns">
+                    {exp:channel:entries channel="line_up" entry_id="120"}
+                    {if band_image}<img src="{band_image}" class="left"/>{/if}
+                    <div class="panel">
+                        <h5>{title}</h5>
+                        {band_content}
+                        {/exp:channel:entries}
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+{snp_footer}

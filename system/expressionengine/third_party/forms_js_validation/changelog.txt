@@ -1,0 +1,93 @@
+1.6.2
+	Added : refresh JS method to refresh the validation on dynamic load 
+
+1.6.1
+	Updated : js script
+
+1.6
+	Added : support for validation the Publish page
+
+1.5.8
+	Bugfix : where the ajax_form_validation_url has a default value 'get'
+	
+1.5.7
+	Bugfix : small bugfix in the JS framework
+
+1.5.6
+	Update: to jQuery 1.9 support
+
+1.5.5
+	bugfix : Minor js bugfixes
+
+1.5.4
+	Added : version number in the JS scripts
+
+1.5.3
+	Bugfix : where the JS_FORMS was declaring everytime
+
+1.5.2
+	Update : Minor DE lang fix
+
+1.5.1
+	Changed : moved the lang="" param to the init function
+	Changed : moved the css_location="" to the init function
+
+1.5
+	Added : {exp:forms_js_validation:init} method to add the stuff early
+	Changed : call {exp:forms_js_validation:add} instead of {exp:forms_js_validation} to validate an form
+	Removed : add_base_files=""
+	Updated : better control over the forms even if they are in an {if} statement or embed
+
+1.4.3
+	Bugfix : where the add_class="" is not working correctly
+
+1.4.2
+	Added : add_class="no" to avoid the plugin will add the validation class
+	Added : show_one_message="yes" to show only the first error
+	Added : binded="no" to validate only on submit
+
+1.4.1 
+	Updated : better Ajax control with callbacks
+	
+1.4
+	Bugfix : where the promtPosition wasn`t working
+	Bugfix : where the scroll wasn`t working in some cases
+	Added : AJAX support
+
+1.3.1
+	Bugfix : Small bugfix in the scrolloffset
+
+1.3
+	Add : Credit Card validation
+	Add : Future validation
+	Add : Past validation
+	Add : ConditionRequired validation		
+	Add : min/max checkbox validation
+
+1.2			
+	Update : the jQuery validation to 2.6.1
+	Added : equals validation
+
+1.1.2 : 	
+	bugfix : when there whas no class assigned to the input element, the validation got broken.
+
+1.1.1 : 	
+	Added : better JS implementation
+
+1.1: 		
+	added : script declarations
+	added : Min and Max values validation
+	added : Min Size and Max Size values validation
+	added : Group validation
+	added : Integer validation
+	added : Number validation
+	added : Phone validation
+	added : Url validation
+	added : Date validation
+	added : IPv4 validation
+
+1.0.1: 	
+	added : new param : add_base_files="yes" when the first validation is in a if statement and not is showing
+
+1.0 : 	
+	Release

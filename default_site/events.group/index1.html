@@ -1,0 +1,133 @@
+{embed="embeds/html_header"}
+  {embed="embeds/page_header"}
+<div id="maincontent"> 
+
+
+
+<!-- {exp:channel:entries channel="blog" date_range_start="{segment_3}" date_range_end="{segment_3}" events_limit="1"}
+              <li class="event {if count == total_results}last {/if} {categories}{category_url_title} {/categories}">
+                    <a href="{site_url}events/{url_title}">
+               
+
+
+                      <h3>{title}<span></span></h3>
+                    </a>
+                </li>
+             {/exp:channel:entries} -->
+
+
+ <!-- {exp:low_events:entries channel="events" date_from="{segment_3}" date_to="{segment_3}"}
+ <h3>{title}<span></span></h3>
+{dates:start_date}
+ {/exp:low_events:entries}
+
+ -->
+{exp:low_events:calendar channel="events" date="{freebie_4}"}
+
+  <table>
+    <caption>
+      <a href="{path="events/{prev_month_url}"}" title="{prev_month format='%F %Y'}">&larr;</a>
+      <a href="{path="events/{this_month_url}"}"><strong>{this_month format="%F %Y"}</strong></a>
+      <a href="{path="events/{next_month_url}"}" title="{next_month format='%F %Y'}">&rarr;</a>
+    </caption>
+    <thead>
+      <tr>
+        {weekdays}<th scope="col">{weekday_1}</th>{/weekdays}
+      </tr>
+    </thead>
+    <tbody>
+      {weeks}
+        <tr{if is_given_week} class="given-week"{/if}>
+          {days}
+            <td class="{if is_current}current{/if}{if is_given} given{/if}{if is_today} today{/if}">
+              {if events_on_day}
+                <a href="{path="events/{day_url}"}">{day_number}</a>
+              {if:else}
+                <span>{day_number}</span>
+              {/if}
+            </td>
+          {/days}
+        </tr>
+      {/weeks}
+    </tbody>
+  </table>
+{/exp:low_events:calendar}
+
+<!-- {exp:low_events:calendar
+    events_field="dates"
+    date="{freebie_4}"
+}
+<table class="calendar" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr id="month_pager">
+            <th colspan="1" class="previous"><a href="{structure:page:uri}
+on/{prev_month_url}" title="{prev_month format='%F %Y'}">&larr;</a></th>
+            <th colspan="5" class="month_title"><a href="{structure:page:uri}
+on/{this_month_url}"><strong>{this_month format="%F %Y"}</strong></a></th>
+            <th colspan="1" class="next"><a href="{structure:page:uri}
+on/{next_month_url}" title="{next_month format='%F %Y'}">&rarr;</a></th>
+        </tr>
+        <tr class="weekdays">
+            {weekdays}<th scope="col">{weekday}</th>{/weekdays}
+        </tr>
+    </thead>
+    <tbody>
+        {weeks}
+        <tr{if is_given_week} class="given-week"{/if}>
+            {days}
+            <td class="{if is_current != 'y'}not_current{/if}{if is_given} given{/if}{if is_today} today{/if}" id="date-{day_url}">
+            {if is_current}
+                <div class="date">
+                    {day_number}
+                </div>
+            {if:else}
+                &nbsp;
+            {/if}
+            </td>
+            {/days}
+        </tr>
+        {/weeks}
+    </tbody>
+</table>
+{/exp:low_events:calendar} -->
+ 
+
+{exp:low_events:entries channel="events" events_field="dates"}
+ 		{if freebie_4}date="{dates:start_date}"{/if}
+        
+<li class="event {if count == total_results}last {/if} {categories}{category_url_title} {/categories}">
+    <a href="{site_url}events/{url_title}">
+      
+      <h3>{title}<span></span></h3>
+    </a>
+</li>
+{/exp:low_events:entries}
+
+
+<ul class="listing">
+    {exp:low_events:entries channel="events" events_field="dates"
+        {if freebie_4}date="{freebie_4}"{/if}
+        {if freebie_4 ==""}date="{current_time format="%Y-%m"}"{/if}
+    }
+    <li class="item">
+        <div class="item_content event" id="date-{dates:start_date format="%Y-%m-%d"}">
+            <h3><a href="{page_uri}">{title}</a></h3>
+            <p class="event_location_type">{categories show_group="4" backspace="2"}{category_name}, {/categories}
+            {if dates:all_day != "y"}
+                <p class="meta">{dates:start_time format="%H:%i"} - {dates:end_time format="%H:%i"}</p>
+            {/if}
+            {if dates:one_day != "y"}
+                <p class="notice"><a href="{page_uri}">This is a multi-day event. Check the event for full dates</a>.</p>
+            {/if}
+        </div>
+    </li>
+    {/exp:low_events:entries}
+</ul>
+
+$(".event").each(function() {
+    // get the ID of the event element
+    var the_date = $(this).attr("id");
+    
+    // find the tabel cell with that same ID and append the div
+    $(this).clone().appendTo('.calendar td#' + the_date);
+});

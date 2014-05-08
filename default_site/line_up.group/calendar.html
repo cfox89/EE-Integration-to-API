@@ -1,0 +1,36 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+<div class="row">
+<div class="large-4 columns">
+{exp:low_events:calendar channel="events" date="{segment_5}"}
+<table>
+    <caption>
+        <a href="{path="events/{prev_month_url}"}" title="{prev_month format='%F %Y'}">&larr;</a>
+        <a href="{path="events/{this_month_url}"}"><strong>{this_month format="%F %Y"}</strong></a>
+        <a href="{path="events/{next_month_url}"}" title="{next_month format='%F %Y'}">&rarr;</a>
+    </caption>
+    <thead>
+        <tr>
+            {weekdays}
+            <th scope="col">{weekday_1}</th>
+            {/weekdays}
+        </tr>
+    </thead>
+    <tbody>
+        {weeks}
+        <tr{if is_given_week} class="given-week"{/if}>
+        {days}
+        <td class="{if is_current}current{/if}{if is_given} given{/if}{if is_today} today{/if}">
+            {if events_on_day}
+            <a href="{path="events/{day_url}"}">{day_number}</a>
+            {if:else}
+            <span>{day_number}</span>
+            {/if}
+        </td>
+        {/days}
+        </tr>
+        {/weeks}
+    </tbody>
+</table>
+{/exp:low_events:calendar}

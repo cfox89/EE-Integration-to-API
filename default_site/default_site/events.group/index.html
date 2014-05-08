@@ -1,0 +1,20 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    {snp_calendar}
+    <div class="large-8 columns">
+        <div class="row">
+            {exp:low_events:entries channel="events" date="{segment_2}" }
+            {if count == total_results}
+            <ul>
+            {/if}
+            <li>
+                {if image}<img src="{image}" width="192" height="167" class="left" />{/if}
+                <a href="{path="events/evententry/{url_title}"}">
+                <h5>{title}</h5>
+                </a>
+            </li>
+            {/exp:low_events:entries}
+        </div>
+    </div>
+              

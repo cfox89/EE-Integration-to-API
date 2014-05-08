@@ -1,0 +1,20 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    {snp_calendar}
+    <div class="large-8 columns">
+        <div class="row">
+            <div class="large-4 small-6 columns">
+            {exp:low_events:entries channel="events" date="{segment_2}"}
+            <div class="large-4 small-6 columns">
+                {if image}<img src="{image}" class="left"/>{/if}
+                <div class="panel">
+                    <h5>{title}</h5>
+                    {band_content}
+                    {content}
+                </div>
+            </div>
+       </div>
+</div>
+{/exp:low_events:entries}
+{snp_footer}

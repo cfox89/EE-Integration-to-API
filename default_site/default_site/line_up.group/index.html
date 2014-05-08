@@ -1,0 +1,24 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    <div id="left_side">
+        {snp_calendar}
+    
+        <!-- Thumbnails -->
+         <div class="large-8 columns">
+           <div class="row">
+            {exp:channel:entries channel="events"}
+            <ul>
+            <li>
+               {if image}<img src="{image}" width="192" height="167" class="left" />{/if}
+                 <a href="{path="events/evententry/{url_title}"}">
+                 <h5>{title}</h5>
+                            
+                </a>
+            </li>
+            {/exp:channel:entries}
+        </div>
+	</div>
+    </div>
+</div>
+{snp_footer}

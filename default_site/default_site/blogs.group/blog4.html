@@ -1,0 +1,21 @@
+{embed="embeds/html_header"}
+{embed="embeds/page_header"}
+<div id="maincontent">
+    <div id="left_side">
+        {snp_latest_news}
+        <div class="large-8 columns">
+            <div class="title">
+                {exp:channel:entries channel="blog" entry_id="126"}
+                <h2>{title}</h2>
+            </div>
+            <div class="event_thumb">
+                {if blog_image}<img src="{blog_image}" class="left"/>{/if}
+            </div>
+            {blog_content}
+            <a href="{path='news}"><img src="{site_url}img/back1.jpg"></a>
+            {/exp:channel:entries}
+        </div>
+    </div>
+</div>
+{snp_footer} 
+               

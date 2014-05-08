@@ -1,0 +1,44 @@
+{embed="embeds/html_header"}
+  {embed="embeds/page_header"}
+<div id="maincontent">
+  <div id="left_side">
+    {snp_events}
+     
+  
+  <div class="large-8 columns">
+  <div class="title">
+  {exp:channel:entries channel="events"}
+  <h2>{title}</h2>
+</div>
+  <div class="event_thumb">
+  {if image}<img src="{image}" class="left"/>{/if}
+  </div>
+  <div class="contact_address_right">
+              <ul>
+                <li class="deeper">
+                  <h4>Event Details</h4>
+                </li>
+                <li>{venue}</li>
+                <li class="deep">Date and Time: 
+                  <li>
+                    {dates:start_date format="%d/%m/%y"}<br>
+                    {dates:start_time}-{dates:end_time}
+                </li>
+                </li>
+                <li>Ticket Price: &euro;{ticket_price}</li>
+              </ul>
+                <br>
+                <br>
+                </div>
+                <div class="large-12 columns">
+                <div class="title">
+                  <h4>Biography</h4>
+                  {page_content}
+                </div>
+    <a href="{path='line_up}"><img src="{site_url}img/back1.jpg"></a>
+  {/exp:channel:entries}
+   </div>
+   </div>
+    </div>
+ </div>
+{snp_footer}
